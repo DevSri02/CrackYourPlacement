@@ -1,0 +1,16 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+                if (nums.length == 0) return 0; // Handle empty array case
+
+        int index = 1; // Start from the second element
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) { // Compare with the previous element
+                nums[index] = nums[i]; // Assign the unique element to the correct position
+                index++;
+            }
+        }
+
+        return index; // Number of unique elements
+    }
+}
